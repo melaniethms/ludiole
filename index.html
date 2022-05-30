@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,17 +9,21 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@700;800&display=swap" rel="stylesheet"> 
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- script -->
+        <script src="/static/script.js"></script>
         <!-- my CSS -->
         <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
         <header>
-            <a href="/index.html"><img src="/static/ludiole-logo.png" alt="logo la ludiole" class="logo"></a>
+            <a href="/"><img src="/static/ludiole-logo.png" alt="logo la ludiole" class="logo"></a>
             <nav class="nav">
                 <ul class="nav_list">
-                    <li class="nav_list-item"><a href="/ateliers.html" class="nav_link">Ateliers</a></li>
-                    <li class="nav_list-item"><a href="/a_propos.html" class="nav_link">à propos de nous</a></li>
-                    <li class="nav_list-item"><a href="/contact.html" class="nav_link">Contact</a></li>
+                    <li class="nav_list-item"><a href="/ateliers" class="nav_link">Ateliers</a></li> 
+                    <li class="nav_list-item"><a href="/a_propos" class="nav_link">à propos de nous</a></li>
+                    <li class="nav_list-item"><a href="/contact" class="nav_link">Contact</a></li>
                 </ul> 
             </nav>
         </header>
@@ -42,12 +47,31 @@
         <div class="partenaires">
             <div class="soutien">
                 <h2 class="titre_vert_gauche">
-                    
+                    Ils nous soutiennent
                 </h2>
             </div>
             <div class="client">
-
+                <h2 class="titre_vert_droite">
+                    Ils ont fait appel à nous
+                </h2>
             </div>
         </div>
+        <footer>
+            <div class="footer_vert">
+                <div class="reseau_sociaux">
+                    <h3>Nous suivre</h3>
+                    <div class="icon_rs">
+                        <a href="https://www.facebook.com/Ludiole/"><img src="/static/facebook-icon-white.png" alt="icone facebook"></a>
+                        <a href=""><img src="/static/instagram-icon-white.png" alt="icone instagram"></a>
+                        <a href=""><img src="/static/twitter-icon-white.png" alt="icone twitter"></a>
+                        <a href=""><img src="/static/linkedin-icon-white.png" alt="icone linkedin"></a>
+                    </div>
+                </div>
+                <div class="webmaster">
+                    <p>Webdesign par <a class="lien-site" href="http://melaniethomas.design">Mélanie Thomas</a></p>
+                    <p>Hébergement sur horuku</p>
+                </div>
+            </div>
+        </footer>
     </body>
     </html>
