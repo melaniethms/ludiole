@@ -27,10 +27,11 @@ body{
     color: var(--clr-text-light);
 }
 
+
 /* NAVIGATION */
 .navigation{
     /* background-color: red; */
-    height: 18.5vh;
+    box-sizing: fit-content;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -42,6 +43,7 @@ body{
     top: 2.3vh;
     max-height: 13vh;
     max-width: 14vh;
+    margin-bottom: 4vh;
 }
 
 .logo{
@@ -53,6 +55,7 @@ body{
     /* background-color: aqua; */
     display:flex;
     justify-content:space-around;
+    align-items: center;
     max-height: 12vh ;
     flex-direction: column;
     position: relative;
@@ -60,6 +63,8 @@ body{
 }
 
 .nav_list-button{
+    display: flex;
+    align-items: center;
     position: relative;
     width : 100%;
     padding: 10px;
@@ -92,7 +97,7 @@ body{
     height : fit-content;
     width: 100%;
     align-self: center;
-    padding-top: 15px;
+    margin-top: 12vh;;
     
 }
 .image_cocotte{
@@ -101,7 +106,7 @@ body{
 
 .see_through_slogan_box{
     block-size: fit-content;
-    max-width:  70%;
+    max-width:  250px;
     left: 0px;
     top: 20vh;
     background: rgba(255, 255, 255, 0.8);
@@ -114,18 +119,24 @@ body{
     justify-content: space-around;
     position: relative;
     margin: 2vh;  
+    margin-left: 4vh;
     font-weight: var(--fw-bold);
-    font-size: 0.60rem;
-    line-height: 1.25rem;
+    line-height: 1.5rem;
     text-transform: uppercase;
     color: var(--clr-text-dark); 
+}
+
+.side_infos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .block_dark_green{
     margin: auto;
     position: relative;
     align-items: flex-end;
-    width : 70%;
+    width : 90%;
     margin-right: 0%;
     margin-top: 20px;
     margin-bottom: 16px;
@@ -137,13 +148,13 @@ body{
 .Text_principal{
     padding: 16px;
     position: relative;
-    line-height: 1rem;
     text-align: justify;
     color: #FFFFFF;
 }
 .boutons_sous_texte{
     display:flex;
     justify-content:space-between;
+    align-items: center;
     max-width: 150vh;
     flex-direction: column;
     position: relative;
@@ -154,10 +165,8 @@ body{
 
 .nav_button{
     position: relative;
+    align-items: center;
     width : 100%;
-    right: 0vh;
-    padding: 10px;
-    padding-left: 0px;
     background-color: var(--clr-accent);
     margin-top: 2px;
     margin-bottom: 2px;
@@ -202,7 +211,7 @@ h2, .titre_vert_gauche {
     position: relative;
     width: 60%;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-normal);
+    font-size: inherit;
     background-color: var(--clr-dark-green); 
 
 }
@@ -214,6 +223,11 @@ h2, .titre_vert_gauche {
     flex-wrap: wrap;
     gap:1rem;
     margin: 6px;
+    margin: auto;
+    margin-left: 0%;
+}
+.logos_soutiens img{
+    max-width: 18vh ;
 }
 
 .client{
@@ -247,7 +261,7 @@ h2, .titre_vert_gauche {
 h2, .titre_vert_droite{
     position: relative;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-normal);
+    font-size: inherit;
     background-color: var(--clr-dark-green); 
     width : 70%;
 
@@ -261,6 +275,13 @@ h2, .titre_vert_droite{
     flex-wrap: wrap;
     gap:1rem;
     margin: 6px;
+    margin: auto;
+    margin-right: 0%;
+}
+
+
+.logos_clients img{
+    max-width: 18vh ;
 }
 
 footer{
@@ -287,14 +308,18 @@ footer{
 }
 
 .icon_rs{
+    /* background-color: cyan; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1px;
+    max-width: 15vh;
+    
 }
 
 .webmaster{
+    box-sizing: fit-content;
     position: relative;
     width: 50%;
     margin: auto;
@@ -303,9 +328,85 @@ footer{
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-end;
-    box-sizing: fit-content;
-    /* background-color: #07225F; */
     padding: 2vh;
-
+    padding-left: 0vh;
+    /* background-color: #07225F; */
 
 }
+
+
+
+@media only screen and (min-width: 600px) {
+    .navigation{
+        gap: 2vh;
+        justify-content: flex-start;
+    }
+    body{
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    .nav_list{
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        padding-right: 2vh;
+        gap: 2vh;
+    }  
+    .nav_list-button{width : fit-content; padding: 1vh;}
+
+    .see_through_slogan_box{max-width:  50%;}
+
+    .texte_slogan{line-height: 1.8rem;}   
+
+    h2, .titre_vert_gauche {width: 40%;}  
+
+    .logos_soutiens{width: 90%;} 
+    .logos_soutiens img{
+        max-width: 18vh ;
+    }   
+
+    h2, .titre_vert_droite{width : 40%;}    
+    .logos_clients{width: 90%;}
+   
+
+    .icon_rs{max-width: 20vh;}
+
+  }
+
+  @media only screen and (min-width: 992px) {
+    .green_section{flex-direction: row;}
+    .see_through_slogan_box{max-width: 30%;}
+    .image_accueil{
+        width: 200vh;
+        align-self: flex-start;
+        margin: 10vh;
+        margin-top: 3vh;
+        margin-left: 0vh;
+    }
+    .partenaires{
+        flex-direction: row;
+    }
+    .soutien{width: 90%;}
+    .block_dark_green{width : 100%;}
+    h2, .titre_vert_gauche {width: 50%;}
+    .logos_soutiens{width: 80%;}
+    h2, .titre_vert_droite{width : 50%;}
+    .logos_clients{width: 80%;}
+  }
+
+
+  @media only screen and (min-width: 1200px) {
+    .image_accueil{
+        width: 180vh;
+        margin: 0vh;
+        margin-left: 5%;
+        margin-right: 10vh;
+        padding: 0vh;
+    }
+    .see_through_slogan_box{max-width: 20%; top:18vh}
+    .green_section{
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+    }
+
+  }
