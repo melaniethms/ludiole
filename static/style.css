@@ -145,11 +145,40 @@ body{
 
 }
 
+.block_dark_green_left{
+    margin: auto;
+    position: relative;
+    align-items: flex-end;
+    max-width : 365px;
+    margin-left: 0%;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    block-size: fit-content;
+    background-color: var(--clr-dark-green);
+}
+.block_light_green_left{
+    margin: auto;
+    position: relative;
+    align-items: flex-end;
+    max-width : 135px;
+    margin-left: 0%;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    block-size: fit-content;
+    background-color: var(--clr-light-green);
+}
+
 .Text_principal{
     padding: 16px;
     position: relative;
     text-align: justify;
     color: #FFFFFF;
+}
+.Adresse{
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    color: var(--clr-text-dark);
 }
 .boutons_sous_texte{
     display:flex;
@@ -370,10 +399,13 @@ footer{
    
 
     .icon_rs{max-width: 20vh;}
-
+    .block_light_green_left{max-width : 30%;}
+    .block_dark_green_left{max-width : 70%;}
   }
 
   @media only screen and (min-width: 992px) {
+    .block_light_green_left{max-width : 20%;}
+    .block_dark_green_left{max-width : 40%;}
     .green_section{flex-direction: row;}
     .see_through_slogan_box{max-width: 30%;}
     .image_accueil{
