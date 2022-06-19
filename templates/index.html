@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
-        <!-- google font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@700;800&display=swap" rel="stylesheet"> 
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <!-- script -->
-        <script src="/static/script.js"></script>
-        <!-- my CSS -->
-        <link rel="stylesheet" href="/static/style.css">
-    </head>
-    <body>
-        <section class="navigation">
-            <div class="logo_box">
-                <a href="/"><img src="/static/ludiole-logo.png" alt="logo la ludiole" class="logo"></a>
-            </div>
-            <div class="nav_list">
-                <div class="nav_list-button"><a href="/ateliers" class="nav_link">Ateliers</a></div> 
-                <div class="nav_list-button"><a href="/a_propos" class="nav_link">à propos de nous</a></div>
-                <div class="nav_list-button"><a href="/contact" class="nav_link">Contact</a></div>
-            </div>             
-        </section>
+{% extends 'base.html' %}
+
+{% block content %}
         <section class="green_section">
             <div class="green_section_child see_through_slogan_box">
                 <div class="texte_slogan">
@@ -77,20 +51,4 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <div class="reseau_sociaux">
-                <h3>Nous suivre</h3>
-                <div class="icon_rs">
-                    <a href="https://www.facebook.com/Ludiole/"><img src="/static/facebook-icon-white.png" alt="icone facebook"></a>
-                    <a href=""><img src="/static/instagram-icon-white.png" alt="icone instagram"></a>
-                    <a href=""><img src="/static/twitter-icon-white.png" alt="icone twitter"></a>
-                    <a href=""><img src="/static/linkedin-icon-white.png" alt="icone linkedin"></a>
-                </div>
-            </div>
-            <div class="webmaster">
-                <p>Webdesign par <a class="lien-site" href="http://melaniethomas.design">Mélanie Thomas</a></p>
-                <p>Hébergement sur horuku</p>
-            </div>
-        </footer>
-    </body>
-    </html>
+{% endblock %}

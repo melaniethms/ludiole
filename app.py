@@ -1,90 +1,19 @@
-import flask
+import flask, io
+from flask import Flask, render_template 
+from forms import ContactForm
+from flask import request
+import pandas as pd
+
 app = flask.Flask("app")
+app.secret_key = 'secretKey'
 
 #functions : 
 #   get page :
 def get_html(page_name):
-  html_file = open(page_name + ".html")
+  html_file = io.open(page_name + ".html", mode="r", encoding="utf-8")
   content = html_file.read()
   html_file.close()
   return content
-
-app.config['MAIL_SERVER'] = 'mail.web-design-johannesburg.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'testing@web-design-johannesburg.com'
-app.config['MAIL_PASSWORD'] = 'testingpassword'
-
-mail = Mail(app)
-
-
-def sendTestEmail():
-    msg = Message("Our first Python Email",
-                  sender="testing@web-design-johannesburg.com",
-                  recipients=["matshidis@gmail.com", "bertha.kgokong@tatisoftware.com"])
-
-    msg.body = """ 
-    Hello there,
-    I am sending this message from python.
-    say Hello
-    regards,
-    Me
-    """
-
-
-    msg.html = """
-    <div>
-    <h5>Hello there</h5>
-    <br>
-    <p>
-    I am sending this message from Python 
-    <br>
-    Say hello 
-    <br>
-    Regards
-    </p>
-    </div>
-    """
-
-    mail.send(msg)
-
-
-def sendContactForm(result):
-    msg = Message("Contact Form from Skolo Website",
-                  sender="testing@web-design-johannesburg.com",
-                  recipients=["matshidis@gmail.com", "bertha.kgokong@tatisoftware.com"])
-
-    msg.body = """
-    Hello there,
-    You just received a contact form.
-    Name: {}
-    Email: {}
-    Message: {}
-    regards,
-    Webmaster
-    """.format(result['name'], result['email'], result['message'])
-
-    mail.send(msg)
-
-
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-
-    if request.method == 'POST':
-        result = {}
-        
-        result['name'] = request.form['name']
-        result['email'] = request.form['email'].replace(' ', '').lower()
-        result['message'] = request.form['message']
-
-        sendContactForm(result)
-
-        return render_template('contact.html', **locals())
-
-
-    return render_template('contact.html', **locals())
-
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
@@ -93,17 +22,44 @@ if __name__ == "__main__":
 
 @app.route("/")
 def home():
-  return get_html("index")
+  title = "Accueil"
+  return render_template("index.html", title=title)
   
 @app.route("/ateliers")
 def ateliers():
-  return get_html("ateliers")
+  title = "Ateliers"
+  return render_template("ateliers.html", title=title)
 
 @app.route("/a_propos")
 def a_propos():
-  return get_html("a_propos")
+  title ="à propos"
+  return render_template("a_propos.html", title=title)
 
 
-@app.route("/contact")
-def contact():
-  return get_html("contact")
+# @app.route("/contact")
+# def contact():
+#       form = ContactForm()
+#     if form.validate_on_submit():
+#         return redirect(url_for("success"))
+#   return get_html("contact")
+
+@app.route('/contact', methods=["GET","POST"])
+def get_contact():
+    title = "Contact"
+    form = ContactForm()
+    # ici, si le type de requête est un POST, nous récupérons les données des formulaires de contact et les sauvegardons.
+    #formulaires et les sauvegarder, sinon nous retournons la page html des formulaires de contact.
+    if request.method == 'POST':
+        name =  request.form["name"]
+        email = request.form["email"]
+        subject = request.form["subject"]
+        message = request.form["message"]
+        res = pd.DataFrame({'name':name, 'email':email, 'subject':subject ,'message':message}, index=[0])
+        res.to_csv('./contactusMessage.csv')
+        print("Votre message a bien été envoyé !")
+    else:
+        return render_template("contact.html", form=form, title=title)
+
+
+if __name__ == '__app__':
+    app.run(debug=True)

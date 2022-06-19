@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <section class="main_info">
+            <div class="text_blocks">
+                <div class="block_dark_green_left">
+                    <div class="Text_principal">
+                        <p>
+                            Vous souhaitez : nous poser vos questions, discuter d’un atelier sur-mesure, nous demander un devis ? 
+                        </p>
+                        <br>
+                        <p>
+                            N’hésitez pas à nous écrire nous serons ravis de vous répondre dès que possible !
+                        </p>
+                    </div>
+                </div>
+                <div class="block_light_green_left">
+                    <div class="Adresse">
+                        <p>
+                            La Ludiole
+                        </p>
+                        <p>
+                            Route de la Gare 43c 
+                        </p>
+                        <p>
+                            2017 Boudry
+                        </p>
+                    </div>
+                </div> 
+            </div>
+            <div class="form">
+                     <!-- Just here i use "url_for" to call the function get_contact.
+                     This function return the html code of our contact page-->
+                <form action="{{ url_for('get_contact') }}" method=post>
+                    <div>
+                        <!-- name forms -->
+                        <p>
+                            {{ form.name.label }} <br>
+                            {{ form.name(placeholder='Votre Nom et Prénom') }}
+                        </p>
+                        <!-- email forms -->
+                        <p>
+                            {{ form.email.label }} <br>
+                            {{ form.email(placeholder='votre e-mail ...') }}
+                        </p>
+                        <!-- Subject of your request -->
+                        <p>
+                            {{ form.subject.label }}<br>
+                            {{form.subject(placeholder='Sujet ...')}}
+                        </p>
+                        <!-- Content of your request -->
+                        <p>
+                            {{ form.message.label }}<br>
+                            {{ form.message(placeholder='votre demande ...') }}
+                        </p>
+                        <!-- Submit button -->
+                        <p>
+                            {{ form.submit(placeholder='Envoyer') }}
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+{% endblock %}

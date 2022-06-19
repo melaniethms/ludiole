@@ -1,10 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
+        <title>
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Ludiole
+            {% endif %}
+        </title>
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico.png">
         <!-- google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,20 +36,23 @@
             </div>             
         </section>
 
-        <footer>
-            <div class="reseau_sociaux">
-                <h3>Nous suivre</h3>
-                <div class="icon_rs">
-                    <a href="https://www.facebook.com/Ludiole/"><img src="/static/facebook-icon-white.png" alt="icone facebook"></a>
-                    <a href=""><img src="/static/instagram-icon-white.png" alt="icone instagram"></a>
-                    <a href=""><img src="/static/twitter-icon-white.png" alt="icone twitter"></a>
-                    <a href=""><img src="/static/linkedin-icon-white.png" alt="icone linkedin"></a>
-                </div>
-            </div>
-            <div class="webmaster">
-                <p>Webdesign par <a class="lien-site" href="http://melaniethomas.design">Mélanie Thomas</a></p>
-                <p>Hébergement sur horuku</p>
-            </div>
-        </footer>
-    </body>
-    </html>
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="reseau_sociaux">
+        <h3>Nous suivre</h3>
+        <div class="icon_rs">
+            <a href="https://www.facebook.com/Ludiole/"><img src="/static/facebook-icon-white.png" alt="icone facebook"></a>
+            <a href=""><img src="/static/instagram-icon-white.png" alt="icone instagram"></a>
+            <a href=""><img src="/static/twitter-icon-white.png" alt="icone twitter"></a>
+            <a href=""><img src="/static/linkedin-icon-white.png" alt="icone linkedin"></a>
+        </div>
+    </div>
+    <div class="webmaster">
+        <p>Webdesign par <a class="lien-site" href="http://melaniethomas.design">Mélanie Thomas</a></p>
+        <p>Hébergement sur horuku</p>
+    </div>
+</footer>
+</body>
+</html>
