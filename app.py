@@ -35,32 +35,10 @@ def a_propos():
   title ="à propos"
   return render_template("a_propos.html", title=title)
 
-
-# @app.route("/contact")
-# def contact():
-#       form = ContactForm()
-#     if form.validate_on_submit():
-#         return redirect(url_for("success"))
-#   return get_html("contact")
-
 @app.route('/contact')
 def get_contact():
     title = "Contact"
     return render_template("contact.html", title=title)
-
-    # form = ContactForm()
-      # ici, si le type de requête est un POST, nous récupérons les données des formulaires de contact et les sauvegardons.
-      #formulaires et les sauvegarder, sinon nous retournons la page html des formulaires de contact.
-    # if request.method == 'POST':
-    #     name =  request.form["name"]
-    #     email = request.form["email"]
-    #     subject = request.form["subject"]
-    #     message = request.form["message"]
-    #     res = pd.DataFrame({'name':name, 'email':email, 'subject':subject ,'message':message}, index=[0])
-    #     res.to_csv('./contactusMessage.csv')
-    #     print("Votre message a bien été envoyé !")
-    # else:
-    #     return render_template("contact.html", form=form, title=title)
         
 @app.route('/form', methods=["GET","POST"])
 def get_form():
