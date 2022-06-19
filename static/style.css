@@ -418,9 +418,24 @@ footer{
 }
 
 .form{
-    margin: 0%;
+    color: var(--clr-text-dark);
+    margin-left: 0vh;
 }
 
+.form-text{
+    color: rgb(185, 185, 185);
+    font-size: 0.75rem;
+}
+
+.btn-primary{
+    color: white;
+    background-color: var(--clr-accent);
+    font-family: inherit;
+    font-size: inherit;
+    border: 0px;
+    border-radius: 0%;
+    padding: 0.5vh;
+}
 
 
 @media only screen and (min-width: 600px) {
