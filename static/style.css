@@ -421,7 +421,7 @@ footer{
 .text_blocks{
     display: flex;
     flex-direction: column;
-    width: ;
+    width: 100%;
 }
 
 .form{
@@ -459,6 +459,95 @@ footer{
     width: 80%;
 }
 
+.green_section_about_us{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #bae068;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+
+}
+
+.see_through_slogan_box_about_us{
+    position: relative;
+    margin: 2vh;
+    margin-left: 0%;
+    background: rgba(255, 255, 255, 0.8);
+}
+.block_dark_green_2{
+    margin: auto;
+    position: relative;
+    align-items: flex-end;
+    width : 80%;
+    margin-right: 0%;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    block-size: fit-content;
+    background-color: var(--clr-dark-green);
+}
+
+.qui_sommes_nous{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5vh;
+    margin-bottom: 5vh;
+
+}
+
+.box_border_dark_green_left{
+    margin: 2vh;
+    margin-left: 0%;
+    margin-right:20%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2vh;
+    box-sizing: fit-content;
+    border-style: solid;
+    border-width: medium;
+    border-left: 0px;
+    border-color: var(--clr-dark-green);
+    padding: 2vh;
+    
+}
+.box_border_dark_green_right{
+    margin: 2vh;
+    margin-right: 0%;
+    margin-left:20%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2vh;
+    box-sizing: fit-content;
+    border-style: solid;
+    border-width: medium;
+    border-right: 0px;
+    border-color: var(--clr-dark-green);
+    padding: 2vh;
+    
+}
+
+.dark_green_prez_paragraphe{
+    align-self: center;
+    font-size: var(--fs-normal);
+    text-align: justify;
+    line-height: 1rem;
+    color: var(--clr-dark-green);
+}
+
+.profile_picture{
+    max-width: 20vh;
+    margin: 1vh;
+}
+
+.telecharger_pdf{
+    display: flex;
+    justify-content: space-around;
+    max-width: 50%;
+    margin-right: 0vh;
+    background-color: red;
+}
 
 @media only screen and (min-width: 600px) {
     .navigation{
