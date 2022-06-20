@@ -43,8 +43,18 @@ def get_contact():
 
 @app.route('/ecodes')
 def ecodes():
-    title = "ecodes"
+    title = "écodés"
     return render_template("ecodes.html", title=title)
+
+@app.route('/habitapero')
+def habitapero():
+    title = "Habitapéro"
+    return render_template("habitapero.html", title=title)
+
+@app.route('/nrj_en_jeu')
+def nrj_en_jeu():
+    title = "énergies en jeu"
+    return render_template("nrj_en_jeu.html", title=title)
         
 @app.route('/form', methods=["POST"])
 def form():
@@ -66,7 +76,7 @@ def form():
       subject = "un nouveau message pour la ludiole",
       sender = request.form.get("e_mail"),
       recipients = ("melanie.thomas.design@gmail.com"),
-      body = request.form.get("nom", "prenom", "message"),
+      body = request.form.get("nom") + " " + request.form.get("prenom") + "\n" + request.form.get("message")
       )
       mail.send(mail_message)
       title = "message envoyé"
