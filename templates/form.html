@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+    <h1>Merci pour votre message</h1>
+    <small>Merci de confirmer vos informations : </small>
+    <br>
+    {{ nom }} {{ prénom }} <br> {{ e_mail }} <br> {{ message }}
+</div>
 
 {% endblock %}

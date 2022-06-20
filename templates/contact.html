@@ -29,56 +29,30 @@
                 </div> 
             </div>
             <div class="form">
-                     <!-- Just here i use "url_for" to call the function get_contact.
-                     This function return the html code of our contact page-->
-                <!-- <form action="{{ url_for('get_contact') }}" method=post>
-                    <div>
-                        <p>
-                            {{ form.name.label }} <br>
-                            {{ form.name(placeholder='Votre Nom et Prénom') }}
-                        </p>
-                        
-                        <p>
-                            {{ form.email.label }} <br>
-                            {{ form.email(placeholder='votre e-mail ...') }}
-                        </p>
-                        
-                        <p>
-                            {{ form.subject.label }}<br>
-                            {{form.subject(placeholder='Sujet ...')}}
-                        </p>
-                        
-                        <p>
-                            {{ form.message.label }}<br>
-                            {{ form.message(placeholder='votre demande ...') }}
-                        </p>
-                        
-                        <p>
-                            {{ form.submit(placeholder='Envoyer') }}
-                        </p>
-                        
-                    </div>
-                </form> -->
+                <div class="error_statement">
+                    {{ error_statement }}
+                </div>
+                
                 <form action="/form" method=post>
                     <div class="Nom">
                         <label for="exampleInput" class="form-label">Nom:</label> <br>
-                        <input type="texte" class="form-control" id="exampleInput" >
+                        <input type="texte" class="form-control" id="exampleInput" name="nom" value="{{ nom }}">
                     </div>
 
                     <div class="Prénom">
                         <label for="exampleInput" class="form-label">Prénom:</label> <br>
-                        <input type="texte" class="form-control" id="exampleInput" >
+                        <input type="texte" class="form-control" id="exampleInput" name="prénom" value="{{ prénom }}">
                     </div>
 
                     <div class="email">
                       <label for="exampleInputEmail1" class="form-label">Adresse e-mail :</label> <br>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit.</div>
+                      <div id="emailHelp" class="form-text" name="e_mail" value="{{ e_mail }}">Nous ne communiquerons jamais votre adresse électronique à qui que ce soit.</div>
                     </div>
                     
                     <div class="message">
                         <label for="exampleFormControlTextarea1">Votre message :</label> <br>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" value="{{ message }}"></textarea>
                     </div> <br>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                   </form>

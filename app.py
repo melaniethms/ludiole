@@ -1,19 +1,22 @@
 import flask, io
 from flask import Flask, render_template 
-from forms import ContactForm
 from flask import request
-import pandas as pd
+from flask_mail import Mail, Message
+import os
 
-app = flask.Flask("app")
+
+
+app = Flask(__name__)
 app.secret_key = 'secretKey'
 
-#functions : 
-#   get page :
-def get_html(page_name):
-  html_file = io.open(page_name + ".html", mode="r", encoding="utf-8")
-  content = html_file.read()
-  html_file.close()
-  return content
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'melanie.thomas.design@gmail.com'
+app.config['MAIL_PASSWORD'] = os.getenv("SENSITIVE_PASSWORD")
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
@@ -40,10 +43,31 @@ def get_contact():
     title = "Contact"
     return render_template("contact.html", title=title)
         
-@app.route('/form', methods=["GET","POST"])
-def get_form():
-    title = "message envoyé"
-    return render_template("form.html", title=title)
+@app.route('/form', methods=["POST"])
+def form():
+    nom = request.form.get("nom")
+    prénom = request.form.get("prénom")
+    e_mail = request.form.get("e_mail")
+    message = request.form.get("message")
+           
+    if not nom or not prénom or not e_mail or not message :
+      error_statement = "vous n'avez pas rempli tous les champs"
+      return render_template("contact.html",
+        error_statement=error_statement,
+        nom=nom,
+        prénom=prénom,
+        e_mail=e_mail,
+        message=message)
+    else:
+      mail_message = Message(
+      subject = (nom + " " + prénom + " a un message pour la ludiole"),
+      sender = request.form.get("e_mail"),
+      recipients = ("melanie.thomas.design@gmail.com"),
+      body = request.form.get("mail_message"),
+      )
+      mail.send(mail_message)
+      title = "message envoyé"
+      return render_template("form.html", title=title, nom=nom, prénom=prénom, e_mail=e_mail, message=message)
 
 if __name__ == '__app__':
     app.run(debug=True)
