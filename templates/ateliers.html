@@ -1,5 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<section class="theme_selection">
+    <div class="theme_green_section">
+        <div class="themes">
+            <button class="theme">Habitat</button>
+            <button class="theme">Concommation</button>
+            <button class="theme">Mobilité</button>
+            <button class="theme">Numérique</button>
+        </div>
+    </div>
+</section>
+<section class="ateliers">
+    <div class="box_atelier">
+        <div class="box_atelier_header">
+            <h3>écodés</h3>
+        </div>
+        <img class="box_atelier_img" src="static/atelier1.png" alt="">
+        <p class="box_atelier_description">
+            Jeu coopératif, dynamique et interactif faisant découvrir des pistes pour agir au quotidien dans l’utilisation efficace de l’énergie et le respect de l’environnement
+        </p>
+        <button class="box_atelier_more">En savoir +</button>
+    </div>
+    <div class="box_atelier">
+        <div class="box_atelier_header">
+            <h3>habitapéro</h3>
+        </div>
+        <img class="box_atelier_img" src="static/atelier2.png" alt="">
+        <p class="box_atelier_description">
+            Jeu dynamique et interactif faisant découvrir des pistes pour une meilleure gestion de l’appartement, tant dans l’énergie que dans la qualité de l’air intériereur
+Particularité ; atelier multiculturel
+        </p>
+        <button class="box_atelier_more">En savoir +</button>
+    </div>
+    <div class="box_atelier">
+        <div class="box_atelier_header">
+            <h3>l’énergie en-jeu</h3>
+        </div>
+        <img class="box_atelier_img" src="static/atelier3.png" alt="">
+        <p class="box_atelier_description">
+            Les participants découvrent de manière ludique grâce à un loto, des astuces pour faire des économies d’énergie, en vue d’une société à 2000 WATTS
+        </p>
+        <button class="box_atelier_more">En savoir +</button>
+    </div>
+</section>
 {% endblock %}

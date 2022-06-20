@@ -58,10 +58,10 @@ def form():
         message=message)
     else:
       mail_message = Message(
-      subject = (nom + " " + prenom + " a un message pour la ludiole"),
+      subject = "un nouveau message pour la ludiole",
       sender = request.form.get("e_mail"),
       recipients = ("melanie.thomas.design@gmail.com"),
-      body = request.form.get("mail_message"),
+      body = request.form.get("nom", "prenom", "message"),
       )
       mail.send(mail_message)
       title = "message envoyé"
