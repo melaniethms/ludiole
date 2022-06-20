@@ -4,8 +4,6 @@ from flask import request
 from flask_mail import Mail, Message
 import os
 
-
-
 app = Flask(__name__)
 app.secret_key = 'secretKey'
 
@@ -46,28 +44,28 @@ def get_contact():
 @app.route('/form', methods=["POST"])
 def form():
     nom = request.form.get("nom")
-    prénom = request.form.get("prénom")
+    prenom = request.form.get("prenom")
     e_mail = request.form.get("e_mail")
     message = request.form.get("message")
            
-    if not nom or not prénom or not e_mail or not message :
+    if not nom or not prenom or not e_mail or not message :
       error_statement = "vous n'avez pas rempli tous les champs"
       return render_template("contact.html",
         error_statement=error_statement,
         nom=nom,
-        prénom=prénom,
+        prenom=prenom,
         e_mail=e_mail,
         message=message)
     else:
       mail_message = Message(
-      subject = (nom + " " + prénom + " a un message pour la ludiole"),
+      subject = (nom + " " + prenom + " a un message pour la ludiole"),
       sender = request.form.get("e_mail"),
       recipients = ("melanie.thomas.design@gmail.com"),
       body = request.form.get("mail_message"),
       )
       mail.send(mail_message)
       title = "message envoyé"
-      return render_template("form.html", title=title, nom=nom, prénom=prénom, e_mail=e_mail, message=message)
+      return render_template("form.html", title=title, nom=nom, prenom=prenom, e_mail=e_mail, message=message)
 
 if __name__ == '__app__':
     app.run(debug=True)
