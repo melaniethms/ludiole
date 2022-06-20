@@ -40,6 +40,11 @@ def a_propos():
 def get_contact():
     title = "Contact"
     return render_template("contact.html", title=title)
+
+@app.route('/ecodes')
+def ecodes():
+    title = "ecodes"
+    return render_template("ecodes.html", title=title)
         
 @app.route('/form', methods=["POST"])
 def form():
@@ -66,6 +71,8 @@ def form():
       mail.send(mail_message)
       title = "message envoyé"
       return render_template("form.html", title=title, nom=nom, prenom=prenom, e_mail=e_mail, message=message)
+
+
 
 if __name__ == '__app__':
     app.run(debug=True)

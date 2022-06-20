@@ -25,6 +25,7 @@ body{
     font-weight: var(--fw-normal);
     line-height: 1.255;
     color: var(--clr-text-light);
+    height: 650px;
 }
 
 
@@ -75,6 +76,10 @@ body{
 }
 .nav_list-button:focus {     
     background-color:var(--clr-dark-green);    
+}
+.navigation>.active>a {
+    background-color: var(--clr-dark-green)
+    
 }
 
 .nav_link{
@@ -329,15 +334,17 @@ h2, .titre_vert_droite{
 }
 
 footer{
-    position: relative;
+    position: absolute;
+    margin-bottom: 0px;
+    
     background-color: var(--clr-dark-green);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 0px;
-    bottom: 0px;
+    
+    
 
 
 }
@@ -386,7 +393,7 @@ footer{
 
 .main_info{
     display: flex;
-    height: fit-content;
+    height: 100%;
     flex-wrap: wrap;
     margin-bottom: 2vh;
 
@@ -404,7 +411,7 @@ footer{
     margin-top: 3vh;
     color: var(--clr-text-dark);
     padding-left: 2vh;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .form-text{
@@ -581,7 +588,9 @@ footer{
 
 }
 .box_atelier{
+    position: relative;
     margin: 2vh;
+    padding-bottom: 2vh;
     border-style: solid;
     border-image-width: medium;
     border-color: var(--clr-accent);
@@ -589,7 +598,7 @@ footer{
 
 }
 .box_atelier_header{
-    position: relative;
+    
     width: 100;
     background-color: var(--clr-accent);
     text-transform: uppercase;
@@ -608,14 +617,17 @@ footer{
 
 }
 .box_atelier_more{
+    text-decoration: none;
+    position: relative;
     background-color: var(--clr-accent);
     color: white;
     border: none;
     font-family: inherit;
     font-size: inherit;
-    margin: 2vh;
+    margin-top: 2vh;
     padding: 1vh;
-    margin-right: 0%;
+    left: 2vh;
+    bottom: 0vh;
 }
 
 .box_atelier_more:hover{
