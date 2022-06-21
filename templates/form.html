@@ -2,10 +2,16 @@
 
 {% block content %}
 <div class="container">
-    <h1>Merci pour votre message</h1>
-    <small>Merci de confirmer vos informations : </small>
+    <div class="titre_merci">
+        <h1>Merci pour votre message</h1>
+        <small>Les informations suivantes ont été transmises : </small>
     <br>
-    {{ nom }} {{ prenom }} <br> {{ e_mail }} <br> {{ message }}
+    </div>
+    
+    <div class="contenu_message">
+        {{ nom }} {{ prenom }} <br> {{ e_mail }} <br> <br> {{ message }}
+    </div>
+    
 </div>
 
 {% endblock %}

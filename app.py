@@ -13,6 +13,7 @@ app.config['MAIL_USERNAME'] = 'melanie.thomas.design@gmail.com'
 app.config['MAIL_PASSWORD'] = os.getenv("SENSITIVE_PASSWORD")
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_DEFAULT_SENDER'] = 'melanie.thomas.design@gmail.com'
 mail = Mail(app)
 
 
@@ -75,8 +76,7 @@ def form():
       mail_message = Message(
       subject = "un nouveau message pour la ludiole",
       recipients = ["melanie.thomas.design@gmail.com"],
-      body = request.form.get("nom") + " " + request.form.get("prenom") + "\n" + request.form.get("e_mail") + "\n" +request.form.get("message"),
-      sender = request.form.get("melanie.thomas.design@gmail.com"),
+      body = request.form.get("nom") + " " + request.form.get("prenom") + "\n" + request.form.get("e_mail") + "\n" + request.form.get("message"),
       )
       mail.send(mail_message)
       title = "message envoyé"

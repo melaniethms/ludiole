@@ -117,6 +117,7 @@ body{
 }
 
 .see_through_slogan_box{
+    
     block-size: fit-content;
     max-width:  250px;
     left: 0px;
@@ -128,6 +129,7 @@ body{
 
 .texte_slogan{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     position: relative;
     margin: 2vh;  
@@ -335,18 +337,14 @@ h2, .titre_vert_droite{
 
 footer{
     position: absolute;
-    margin-bottom: 0px;
-    
+    margin-top: 30vh;
+    margin-bottom: 0px; 
     background-color: var(--clr-dark-green);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    
-    
-
-
 }
 
 .reseau_sociaux{
@@ -406,6 +404,20 @@ footer{
     width: 50%;
 }
 
+.image{
+    position: relative;
+    width: 1%;
+    max-width: 50%;
+    background-color: red;
+    
+    
+}
+
+.image_flyer{
+    max-height: 20px;
+    width: 100%;
+    
+}
 .form{
 
     margin-top: 3vh;
@@ -452,6 +464,27 @@ footer{
     color: red;
     font-size: 1rem;
     width: 80%;
+}
+
+/* FORM VALIDATION PAGE */
+.container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2vh;
+
+}
+
+.contenu_message{
+    padding: 1vh;
+    margin: 2vh;
+    border-style: solid;
+    border-width: medium;
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+    font-size: var(--fs-normal);
+
 }
 
 /* PAGE A PROPOS */
@@ -648,6 +681,77 @@ footer{
     background-color: var(--clr-dark-green);
 }
 
+/* TEMPLATE ATELIER */
+table{
+    border-style: solid;
+    border-width: thick;
+    border-color: var(--clr-dark-green);
+    border-collapse: collapse;
+
+}
+td, th{
+    padding: 1vh;
+    border-style: solid;
+    border-width: medium;
+    border-color: white;
+}
+.nav_button{
+    position: relative;
+    align-items: center;
+    width : 100%;
+    background-color: var(--clr-accent);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 30px;
+}
+
+.nav_button:focus {     
+    background-color:var(--clr-dark-green);    
+}
+.boutons_autres_ateliers{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width:100%;
+
+}
+
+.atelier_precedent{
+    position: relative;
+    align-items: left;
+    width : auto;
+    background-color: var(--clr-accent);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 30px;
+}
+
+.atelier_precedent:hover{
+    text-decoration: underline;
+}
+.atelier_precedent:focus{
+    background-color:var(--clr-dark-green);  
+}
+
+.atelier_suivant{
+    position: relative;
+    align-items: right;
+    width : auto;
+    background-color: var(--clr-accent);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 30px;
+}
+
+.atelier_suivant:hover{
+    text-decoration: underline;
+}
+.atelier_suivant:focus{
+    background-color:var(--clr-dark-green);  
+}
+
 @media only screen and (min-width: 600px) {
     .navigation{
         gap: 2vh;
@@ -673,9 +777,7 @@ footer{
     h2, .titre_vert_gauche {width: 40%;}  
 
     .logos_soutiens{width: 90%;} 
-    .logos_soutiens img{
-        max-width: 18vh ;
-    }   
+    .logos_soutiens img{max-width: 18vh ;}   
 
     h2, .titre_vert_droite{width : 40%;}    
     .logos_clients{width: 90%;}
@@ -684,8 +786,10 @@ footer{
     .icon_rs{max-width: 25vh;}
     .block_light_green_left{max-width : 30%;}
     .block_dark_green_left{max-width : 70%;}
+    .main_info{flex-wrap: nowrap;}
+}
     
-  }
+    
 
   @media only screen and (min-width: 992px) {
     .block_light_green_left{max-width : 20%;}
@@ -714,8 +818,7 @@ footer{
     .box_border_dark_green_right{flex-direction: row;}
   }
 
-
-  @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px){
     .image_accueil{
         width: 180vh;
         margin: 0vh;
@@ -730,5 +833,4 @@ footer{
     }
     .box_border_dark_green_right{margin-left: 45%;}
     .box_border_dark_green_left{margin-right: 45%;}
-
-  }
+}
