@@ -412,13 +412,19 @@ footer{
     color: var(--clr-text-dark);
     padding-left: 2vh;
     max-width: 100%;
+    border-style: solid;
+    border-width: medium;
+    border-color: var(--clr-accent);
+    box-sizing: fit-content;
 }
 
 .form-text{
     color: rgb(185, 185, 185);
     font-size: 0.75rem;
 }
-
+.exampleInput{
+    width: 100%;
+}
 .btn-primary{
     color: white;
     background-color: var(--clr-accent);
@@ -494,6 +500,7 @@ footer{
     margin-right:20%;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 2vh;
     box-sizing: fit-content;
@@ -509,6 +516,7 @@ footer{
     margin-right: 0vh;
     margin-left:20%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 2vh;
     box-sizing: fit-content;
@@ -702,6 +710,8 @@ footer{
     .logos_clients{width: 80%;}
     .box_border_dark_green_right{margin-left: 40%;}
     .box_border_dark_green_left{margin-right: 40%;}
+    .box_border_dark_green_left{flex-direction: row;}
+    .box_border_dark_green_right{flex-direction: row;}
   }
 
 
