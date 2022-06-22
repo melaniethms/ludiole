@@ -3,16 +3,17 @@
 {% block content %}
 <section class="theme_selection">
     <div class="theme_green_section">
-        <div class="themes">
-            <button class="theme">Habitat</button>
-            <button class="theme">Consommation</button>
-            <button class="theme">Mobilité</button>
-            <button class="theme">Numérique</button>
+        <div class="themes" id = "myBtnContainer">
+            <button class="theme active" onclick="filterSelection('all')">Tous</button>
+            <button class="theme" onclick="filterSelection('Habitat')">Habitat</button>
+            <button class="theme" onclick="filterSelection('Consommation')">Consommation</button>
+            <button class="theme" onclick="filterSelection('Mobilité')">Mobilité</button>
+            <button class="theme" onclick="filterSelection('Numérique')">Numérique</button>
         </div>
     </div>
 </section>
 <section class="ateliers">
-    <div class="box_atelier">
+    <div class="box_atelier filterDiv Habitat Consommation">
         <div class="box_atelier_header">
             <h3>écodés</h3>
         </div>
@@ -24,7 +25,7 @@
             <a class="box_atelier_more" href="/ecodes">En savoir +</a> 
         </div>
     </div>
-    <div class="box_atelier">
+    <div class="box_atelier filterDiv Habitat Consommation Numérique">
         <div class="box_atelier_header">
             <h3>habitapéro</h3>
         </div>
@@ -37,7 +38,7 @@ Particularité ; atelier multiculturel
             <a class="box_atelier_more" href="/habitapero">En savoir +</a> 
         </div>
     </div>
-    <div class="box_atelier">
+    <div class="box_atelier filterDiv Habitat Consommation Mobilité Numérique">
         <div class="box_atelier_header">
             <h3>l’énergie en-jeu</h3>
         </div>

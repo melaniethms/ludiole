@@ -1,11 +1,27 @@
+from email.policy import default
 import flask, io
 from flask import Flask, render_template 
 from flask import request
 from flask_mail import Mail, Message
 import os
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'secretKey'
+
+app.config['SQLALCHEMY_DATABSE_URI'] = 'mysql+pymysql://root:Eames2012!@localhost/ateliers'
+#Initialize the db
+db=SQLAlchemy(app)
+#create db model
+class Atelier(db.Model):
+  id = db.Column(db.Integer, primary_key = True)
+  name = db.Column(db.String(200), nullable=False)
+  date_created = db.Column(db.DateTime, default= datetime.utcnow)
+  #Create functiom to return a string when we add someting
+  def __repr__(self):
+    return '<Name %r>' % self.id
+
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -19,6 +35,8 @@ mail = Mail(app)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
+
+
 
 #routes :
 
